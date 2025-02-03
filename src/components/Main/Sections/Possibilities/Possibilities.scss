@@ -1,0 +1,73 @@
+@import "@/sass/all";
+
+.possibilities {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  @include adaptiv-value("gap", 20, 10);
+  @include adaptiv-value("padding", 20, 10);
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    border-radius: rem(12);
+    margin: 20px;
+  }
+
+  border: 1px solid $grey-15;
+  box-shadow: 0 0 0 10px #191919;
+  background: $grey-08;
+  position: relative;
+  z-index: 99;
+  &__item {
+    border: 1px solid $grey-15;
+    border-radius: 12px;
+    @include adaptiv-value("padding-block", 40, 10);
+    @include adaptiv-value("padding-inline", 20, 5);
+
+    background: $grey-10;
+
+    @extend %flex;
+    flex-direction: column;
+    @include adaptiv-value("gap", 20, 16);
+    max-height: rem(200);
+    position: relative;
+    text-align: center;
+    transition: all .23s ease 0s;
+
+    &:hover {
+      scale: 1.03;
+
+      > a > img{
+        filter: brightness(100%);
+      }
+    }
+  }
+}
+.item-possibilities {
+  &__icon {
+    @include adaptiv-value("width", 82, 48);
+    @include adaptiv-value("height", 82, 48);
+    cursor: pointer;
+  }
+
+  &__text {
+    font-weight: 600;
+    @include adaptiv-value("font-size", 20, 12);
+    color: $absolute-white;
+  }
+
+  &__link-btn {
+    position: absolute;
+    @include adaptiv-value("top", 20, 5);
+    @include adaptiv-value("right", 20, 5);
+    transition: all .23s ease 0s;
+    > img {
+      width: rem(30);
+      height: rem(30);
+      filter: brightness(30%);
+      cursor: pointer;
+      @include adaptiv-value("width", 32, 22);
+      @include adaptiv-value("height", 32, 22);
+    }
+  }
+}

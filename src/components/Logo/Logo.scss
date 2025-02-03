@@ -1,0 +1,16 @@
+@import "@/sass/all";
+
+.logo {
+  @extend %flex;
+  gap: rem(10);
+  text-decoration: none;
+  > img {
+    @include adaptiv-value("width", 48, 28);
+    @include adaptiv-value("height", 48, 28);
+  }
+  > span {
+    color: $absolute-white;
+    font-weight: 700;
+    @include adaptiv-value("font-size", 26, 16);
+  }
+}

@@ -1,0 +1,64 @@
+@import "@/sass/all";
+
+.header {
+  background-color: $grey-10;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptiv-value("min-height", 90, 68);
+  }
+
+  &__navigation {
+    @media (max-width: 757px) {
+      display: none;
+    }
+  }
+
+  // &__menu {
+  // }
+
+  &__dropdown-menu {
+    margin-left: rem(15);
+    @media (min-width: 747px) {
+      display: none;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    > button {
+      @media (max-width: 375px) {
+        display: none;
+      }
+    }
+  }
+}
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    display: inline-block;
+    border-radius: rem(10);
+    color: $absolute-white;
+    @include adaptiv-value("font-size", 18, 14);
+    transition: all 0.23s ease 0s;
+
+    &.active {
+      background: $grey-08;
+      border: 1px solid $grey-15;
+      &:hover {
+        background-color: $grey-10;
+      }
+    }
+
+    padding: rem(16) rem(24);
+    text-decoration: none;
+    color: $absolute-white;
+  }
+}

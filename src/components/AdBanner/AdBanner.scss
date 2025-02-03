@@ -1,0 +1,56 @@
+@import "@/sass/all";
+
+.adBanner {
+  @extend %flex;
+  justify-content: space-between;
+  min-height: rem(63);
+  position: relative;
+  padding-inline: rem(15);
+  color: $absolute-white;
+  border-bottom: 1px solid $grey-15;
+
+  background: url("/public/images/svg/header/Abstract\ Design.svg") no-repeat
+    center / cover;
+
+  &__text {
+    @include adaptiv-value("font-size", 18, 12);
+    > p {
+      display: inline-block;
+      margin-right: rem(10);
+    }
+    > a {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      white-space: nowrap;
+      transition: all 0.23s ease 0s;
+      @media (max-width: 440px) {
+        display: block;
+        text-align: center;
+      }
+      &:hover {
+        color: $purple-75;
+      }
+    }
+  }
+
+  &__close {
+    @include adaptiv-value("min-width", 32, 26);
+    @include adaptiv-value("height", 32, 26);
+    padding: 4px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all .23s ease 0s;
+    > img {
+      @include adaptiv-value("min-width", 12, 9);
+      @include adaptiv-value("height", 12, 9);
+    }
+
+    &:hover {
+      background-color: rgb(255, 77, 77);
+      color: $absolute-black;
+    }
+
+    cursor: pointer;
+    @extend %flex;
+  }
+}

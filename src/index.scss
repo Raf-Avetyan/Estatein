@@ -1,0 +1,38 @@
+@import './sass/reset';
+@import "./sass/fonts";
+
+@import './sass/all';
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  color: $grey-60;
+  background-color: $grey-08;
+  max-width: 1920px;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+[class^="__container"],
+[class*="__container"] {
+  max-width: $maxWidthContainer + px;
+  @include adaptiv-value("padding-inline", 30, 15);
+  margin: 0 auto;
+}
+
+main {
+  flex: 1 1 auto;
+}
